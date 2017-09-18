@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <a href="/sunck/good/">链接</a>
+    <a href="{% url 'app:good' 1 %}">url链接</a>
+
+    <h1>sunck is a good man</h1>
+    <h1>{{stu.sname}}</h1>
+    <h1>{{stu.getName}}</h1>
+    <h2>num = *{{num}}*</h2>
+    {% if num %}
+        <h1>sunck is a good man</h1>
+    {% endif%}
+
+    <!--注释-->
+    {% comment %}
+        <h1>sunck is a good man</h1>
+        <h1>{{stu.sname}}</h1>
+        <h1>{{stu.getName}}</h1>
+    {% endcomment %}
+
+    {% ifequal 'sunck' 'sunck' %}
+        欢迎光临
+    {% endifequal %}
+
+    <h1>{{str|upper}}</h1>
+    <h1>{{str}}</h1>
+
+    <h1>{{list|join:'#'}}</h1>
+
+    <h1>{{test|default:'没有'}}</h1>
+
+    <h2>*{{num}}*</h2>
+    <h2> *{{num|add:10}}*</h2>
+    <h2>*{{num|add:-5}}*</h2>
+    <!--{% comment %}-->
+    <!--num/1*5-->
+    <h2>*{{ widthratio num 1 5}}*</h2>
+    <!--num/5-->
+    <h2>*{{ widthratio num 5 1}}*</h2>
+     <!--{% endcomment %}-->
+
+    {{code}}
+    {{code|escape}}
+    {{code|safe}}   <!--转义成功-->
+    {% autoescape off %}
+        自动转义：{{code}}
+    {% endautoescape %}
+</body>
+</html>

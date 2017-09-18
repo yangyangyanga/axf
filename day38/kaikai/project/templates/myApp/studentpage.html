@@ -1,0 +1,47 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生分页显示</title>
+    <link rel="stylesheet" href="{% static 'myApp/css/pagesp.css' %}" >
+</head>
+<body>
+    <ul>
+        {% for stu in students %}
+        <li>
+            {{ stu.sname }}--{{ stu.sgrade }}
+        </li>
+        {%  endfor %}
+    </ul>
+    <div id="pagesplit">
+        <ul  style="list-style:none;">
+            <li>
+                {% if students.has_previous %}
+                    <a href="/studentpage/{{students.previous_page_number}}">上一页</a>
+                {% else %}
+                    <a href="/studentpage/{{students.number}}">上一页</a>
+                {% endif %}
+            </li>
+            {% for index in students.paginator.page_range %}
+                {% if index == students.number %}
+                    <li>
+                        {{index}}
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="/studentpage/{{index}}">{{index}}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <li>
+                {% if students.has_next %}
+                    <a href="/studentpage/{{students.next_page_number}}">下一页</a>
+                {% else %}
+                    <a href="/studentpage/{{students.number}}">下一页</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

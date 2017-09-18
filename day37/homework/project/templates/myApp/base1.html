@@ -1,0 +1,42 @@
+{% extends 'myApp/base.html' %}
+
+{% block main %}
+    <style>
+        #main1{
+            display:flex;
+			flex-direction:row;
+        }
+        #mainleft{
+            <!--float:left:-->
+            height:800px;
+            background-color:#F5F5F5;
+            flex-grow:1;
+        }
+        #mainright{
+            <!--float:left:-->
+            width:400px;
+            height:800px;
+            background-color:white;
+            flex-grow:5;
+        }
+        #mainleft li{
+            width:1 rem;
+            line-height:65px;
+            text-align:center;
+            border-bottom:1px solid #E0E0E0;
+        }
+    </style>
+    <div id="main1">
+        <div id="mainleft">
+            {% block mainleft %}
+
+            {% endblock %}
+        </div>
+        <div id="mainright">
+            {% block mainright %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+{% endblock %}

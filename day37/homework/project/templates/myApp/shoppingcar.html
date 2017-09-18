@@ -1,0 +1,35 @@
+{% extends 'myApp/base.html' %}
+
+{% block h3 %}
+    <style>
+        h3{
+            height:100%;
+            padding-top: 17px;
+            margin:0;
+            background-color:#f9fafd;
+        }
+    </style>
+    购物车
+{% endblock %}
+
+{% block main %}
+    {% load static from staticfiles %}
+    <style>
+        #main{
+            height:535px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="{% static 'myApp/css/caranduser.css' %}"/>
+    <div id="car">
+        <div id="tubiao">
+            <img src="{% static 'myApp/img/empty_addrlist-7b6725e9.png' %}" width="27%" height="100%"/>
+        </div>
+        <div id="kongkong">
+            亲，购物车空空的耶~
+        </div>
+        <div id="quguang">
+            <a href="{% url 'app:baseindex' %}">去逛逛</a>
+        </div>
+    </div>
+{% endblock %}

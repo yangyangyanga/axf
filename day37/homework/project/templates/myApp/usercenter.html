@@ -1,0 +1,31 @@
+{% extends 'myApp/base1.html' %}
+
+{% block h3 %}
+    用户中心
+{% endblock %}
+
+{% block mainleft %}
+    <ul>
+        <li><a href="#">个人信息</a></li>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="#">我的</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+{% endblock %}
+
+{% block mainright %}
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static 'myApp/css/caranduser.css' %}"/>
+    <div id="car">
+        <div id="tubiao">
+            <img src="{% static 'myApp/img/cmy.png' %}" width="27%" height="100%"/>
+        </div>
+        <div id="kongkong">
+            亲，您还没有登录哦~
+        </div>
+        <div id="quguang">
+            <a href="{% url 'app:login' %}">去登录</a>
+        </div>
+    </div>
+{% endblock %}

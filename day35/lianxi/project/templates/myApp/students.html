@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生页面</title>
+</head>
+<body>
+    <h1>学生信息</h1>
+    <ol>
+        {%for student in students%}
+        <li>{{student.sname}}--
+            {%if student.ssex%}
+            男
+            {%else%}
+            女
+            {%endif%}--{{student.sage}}--{{student.scontend}}</li>
+        {%endfor%}
+    </ol>
+</body>
+</html>
