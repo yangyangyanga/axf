@@ -2,15 +2,14 @@
 
 {% load static from staticfiles %}
 {% block linkscript %}
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
     <script type="text/javascript" charset="utf-8" src="{% static 'home/js/home.js' %}"></script>
 {% endblock %}
 
 {% block base %}
 
 <div id="home">
-
-    <!--轮播-->
+     <!--轮播-->
     <section class="swiper-container" id="topSwiper">
         <div class="swiper-wrapper">
             {% for item in wheelsList %}
@@ -50,8 +49,6 @@
             </ul>
         </menu>
     </section>
-
-
 
     <section class="CVS">
         <h2>
@@ -125,7 +122,7 @@
         {% endfor %}
     </section>
 
-
 </div>
+
 
 {% endblock %}
